@@ -1,5 +1,4 @@
-open mysql 
- mysql -u root -p
+open mysql --> mysql -u root -p
 SHOW DATABASES;
 USE STUDENT;
 SHOW TABLES;
@@ -17,3 +16,4 @@ INSERT INTO users (username, email) VALUES
 
 
 SELECT * FROM users;
+view users---> select user , host from mysql.user;
