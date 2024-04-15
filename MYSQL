@@ -34,3 +34,7 @@ granting to select id for each
 DELETE FROM test WHERE id = 1;
 delete command
 -----------------------------------------------------
+ grant SELECT on student.* TO 'delete'@'localhost';
+----------------------------------------------------------
+ALTER TABLE students ADD COLUMN email VARCHAR(100);
+-------------------------------------------------------------------
