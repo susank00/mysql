@@ -27,3 +27,5 @@ Exit MySQL: Once you've created the user and granted privileges, you can exit th
 
 EXIT;
 That's it! You've created a new user in MySQL and provided different levels of access to databases. The user can now connect to the MySQL server using the specified username and password and perform operations based on the granted privileges.
+to view how many users in the database
+SELECT * FROM mysql.user;
