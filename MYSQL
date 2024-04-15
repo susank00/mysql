@@ -38,3 +38,12 @@ delete command
 ----------------------------------------------------------
 ALTER TABLE students ADD COLUMN email VARCHAR(100);
 -------------------------------------------------------------------
+mysqldump -u root -p student > /home/susan/Desktop/backup.sql
+this backsup the database
+-----------------------------------------------------------------------
+mysqldump -u username -p database_name | gzip > backup_file.sql.gz
+this backsup in zip file
+-------------------------------------------------------------------
+mysql -u username -p database_name < backup_file.sql
+restore the backedup file
+
