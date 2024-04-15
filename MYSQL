@@ -21,3 +21,6 @@ view users---> select user , host from mysql.user;
 UPDATE users
 SET first_name = 'NewFirstName'
 WHERE employee_id = 1;
+
+SELECT USER();
+view the current loggeed user
