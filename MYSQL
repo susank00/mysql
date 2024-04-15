@@ -24,3 +24,6 @@ WHERE employee_id = 1;
 
 SELECT USER();
 view the current loggeed user
+
+SHOW GRANTS FOR 'intern'@'localhost';
+show what current user is grant;
