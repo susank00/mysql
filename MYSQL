@@ -17,3 +17,7 @@ INSERT INTO users (username, email) VALUES
 
 SELECT * FROM users;
 view users---> select user , host from mysql.user;
+
+UPDATE users
+SET first_name = 'NewFirstName'
+WHERE employee_id = 1;
