@@ -46,4 +46,9 @@ this backsup in zip file
 -------------------------------------------------------------------
 mysql -u username -p database_name < backup_file.sql
 restore the backedup file
+-------------------------------------------------------------------
+change current localhos to anything
+UPDATE mysql.user SET Host='%' WHERE User='root' AND Host='localhost';
+FLUSH PRIVILEGES;
+sudo service mysql restart
 
