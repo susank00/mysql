@@ -1,0 +1,37 @@
+go to my /etc/mysql/mycnf  
+and enter
+[mysqld]
+general_log = 1;
+general_log = /home/susan/logfile.log
+
+or in mysql write
+he output you provided indicates that the general query log in MySQL is currently disabled. The general_log variable is set to OFF, and the log file path is specified as /home/susan/logfile.log.
+
+If you wish to enable the general query log, follow these steps:
+
+    Modify MySQL Configuration File:
+        Open your MySQL server configuration file (usually located at /etc/my.cnf or my.ini).
+        Add or modify the following directive in the [mysqld] section:
+
+        general_log = /path/to/query.log
+
+        Replace /path/to/query.log with the desired path where you want to store the query log.
+
+    Enable the Query Log:
+        You can enable the query log using the following methods:
+            Using MySQL Console:
+
+            SET global general_log = 1;
+
+            Using Configuration File: Uncomment the following line to enable general logs:
+
+            general_log = ON;
+
+    Check the General Log Status:
+        To verify that the query log is enabled, execute the following command in MySQL:
+
+        SHOW variables like '%general_log%';
+
+    This will display information about the general log status.
+
+Remember to adjust the file path and settings according to your specific environment. The query log will capture all queries executed on your MySQL server, providing valuable insights for debugging and monitoring purposes[1] [2] [3] [4] [5].
