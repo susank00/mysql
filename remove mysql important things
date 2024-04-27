@@ -1,0 +1,31 @@
+remove mysql
+Reposting my answer to a similar question here. I was able to resolve this issue on Ubuntu 22.04 using arief21's solution to a similar problem on 20.04, which itself was copied from here.
+Overview
+
+It seems that the problem comes from some partial initialization remaining in the filesystem from the first, failed installation. So the solution is basically to make sure to clear out everything that was added or modified during the failed install attempts.
+
+I didn't have time to dive much deeper, so I don't know precisely which files are to blame, but if anyone can offer more insight, please comment below for future readers who need a more delicate solution.
+Purge Relevant Packages
+
+    Make sure MySQL is not running:
+
+sudo systemctl stop mysql
+
+    Then purge all of the MySQL packages:
+
+sudo apt purge mysql-server mysql-client mysql-common mysql-server-core-* mysql-client-core-*
+
+    Then delete all of the MySQL files:
+
+sudo rm -rf /etc/mysql /var/lib/mysql /var/log/mysql
+
+    Finally clean all packages that are not needed:
+
+sudo apt autoremove
+sudo apt autoclean
+
+    And it never hurts to do a reboot before moving on
+
+sudo reboot
+
+Now with any lingering configuration cruft culled, you should be able to run the install command again.
