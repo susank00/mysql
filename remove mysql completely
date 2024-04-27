@@ -1,0 +1,54 @@
+Completely removing MySQL from Ubuntu involves stopping the service, removing packages, deleting configuration files, and optionally removing leftover data directories. Here's a breakdown of the steps:
+
+Important Note: Before proceeding, ensure you have a backup of your databases if you need them. Uninstalling MySQL will erase all data.
+
+    Stop MySQL Service:
+    Use the following command to stop the MySQL service:
+    Bash
+
+    sudo systemctl stop mysql.service
+
+    Use code with caution.
+
+Remove MySQL Packages:
+Run this command to remove the core MySQL packages and any version-specific packages:
+Bash
+
+sudo apt-get purge mysql-server mysql-client mysql-common mysql-server-core-* mysql-client-core-*
+
+Use code with caution.
+
+Remove MySQL User and Group (Optional):
+   By default, Ubuntu creates a user and group for MySQL. You can remove them with:
+Bash
+
+sudo deluser mysql
+sudo delgroup mysql
+
+Use code with caution.
+
+Remove MySQL Configuration and Data Files:
+   Delete the configuration directory and data directory. Note that /var/lib/mysql stores your databases, so only proceed if you're sure about data loss.
+Bash
+
+sudo rm -rf /etc/mysql /var/lib/mysql
+
+Use code with caution.
+
+Remove Additional Packages (Optional):
+This step removes any unused dependencies left behind by MySQL:
+Bash
+
+sudo apt-get autoremove
+
+Use code with caution.
+
+Update Repository Information (Optional):
+Update your package lists after making changes:
+Bash
+
+sudo apt-get update
+
+Use code with caution.
+
+Remember, these steps will completely remove MySQL and its data. Make sure you have a backup if necessary. If you encounter any issues, you can refer to online resources for more detailed instructions specific to your Ubuntu version.
