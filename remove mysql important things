@@ -1,3 +1,5 @@
+
+https://askubuntu.com/questions/1405475/unable-to-install-mysql-server-on-ubuntu-22-04-lts
 remove mysql
 Reposting my answer to a similar question here. I was able to resolve this issue on Ubuntu 22.04 using arief21's solution to a similar problem on 20.04, which itself was copied from here.
 Overview
