@@ -52,3 +52,10 @@ UPDATE mysql.user SET Host='%' WHERE User='root' AND Host='localhost';
 FLUSH PRIVILEGES;
 sudo service mysql restart
 
+UPDATE `mfin_db`.`account_opening` SET `status` = 'Closed' WHERE (`id` = '213291');
+select * from account_opening where accountNo like '%15.001.02.4.FD.1%';
+select * from saving_account_details;
+select * from account_opening where accountNo like '%15.011.02.1.FD.1%';
+select * from account_opening;
+select * from account_opening where accountNo like '%.CF%';
+select * from account_opening where status like '%ACTIVE%';
