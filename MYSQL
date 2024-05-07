@@ -59,3 +59,15 @@ select * from account_opening where accountNo like '%15.011.02.1.FD.1%';
 select * from account_opening;
 select * from account_opening where accountNo like '%.CF%';
 select * from account_opening where status like '%ACTIVE%';
+
+INNER JOIN MYSQL COMMANDS
+SELECT *
+FROM saving_account_details
+INNER JOIN account_opening
+ON saving_account_details.account_opening_id = account_opening.id;
+
+INNER JOIN FOR SELECTIVE TABLE HEAD/COLUMN
+SELECT saving_account_details.channel, account_opening.accountNo
+FROM saving_account_details
+INNER JOIN account_opening
+ON saving_account_details.account_opening_id = account_opening.id;
